@@ -12,6 +12,13 @@
     <img src="https://cdn-images-1.medium.com/max/800/1*JcxO284S51FGR3tSriBqBg.png">
 
     <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js').then(function() {
+          console.log('success service worker');
+        }).catch(function(err) {
+          console.log('failed service worker');
+        });
+      }
     </script>
   </body>
 </html>
